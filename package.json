@@ -1,0 +1,10 @@
+{
+  "name": "nova-wisp",
+  "version": "1.0.0",
+  "description": "Wisp tunnel for Nova.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "@mercuryworkshop/wisp-js": "0.4.1" }
+}
