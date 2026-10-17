@@ -1,0 +1,13 @@
+# Backup for the self-ping in server.js: wakes the Render service if it ever falls
+# asleep (for example after Render restarts it), so Nova's first page isn't slow.
+name: Keep awake
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - run: curl -fsS --max-time 90 --retry 2 https://nova-wisp.onrender.com/ || true
