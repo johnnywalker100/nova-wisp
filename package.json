@@ -4,7 +4,14 @@
   "description": "Wisp tunnel for Nova.",
   "type": "module",
   "private": true,
-  "engines": { "node": ">=20" },
-  "scripts": { "start": "node server.js" },
-  "dependencies": { "@mercuryworkshop/wisp-js": "0.4.1" }
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "postinstall": "node scripts/fetch-warp.mjs"
+  },
+  "dependencies": {
+    "@mercuryworkshop/wisp-js": "0.4.1"
+  }
 }
